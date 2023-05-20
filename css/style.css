@@ -1,0 +1,385 @@
+/* Aqui importei a fonte Poppins do Google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+/*  a diferença principal entre :root e * é que :root é um seletor para o elemento raiz do documento HTML e é usado principalmente
+para definir variáveis personalizadas, enquanto * é um seletor universal que seleciona todos os elementos e é usado para aplicar
+estilos gerais a todos os elementos. */
+
+/* Tendo isso em mente: */
+
+/* usei a declaração :root para selecionar o elemento raiz do documento HTML
+e definir as variáveis para que se tornem variáveia globais, assim se futuramente seja 
+necessário trocar de cores é só alterar a cor por aqui e não no documento inteiro.
+*/
+:root {
+	--roxo-claro: #A5A3D0;
+	--roxo-medio: #7265a4;
+	--roxo-escuro: #4f3f6a;	
+	--azul: #2082d8;
+	--rosa: #ffadff;
+	--branco: #ffffff;
+	--cinza-claro: #f5f5f5;
+	--cinza-escuro: #333333;
+}
+
+/* Utilizei a declaração *  para selecionar todos os elementos do documento HTML.
+Ela afetará todos os elementos no documento, a menos que sejam especificadas outras regras de estilo mais específicas. */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+}
+
+/* o corpo da pagina foi definido com o layout flexbox 
+e defini a direção dos itens filhos como coluna.
+*/
+body {	
+	display: flex;
+	flex-direction: column;
+}
+
+/* no cabeçalho */
+header {
+	/* defini a largura do elemento <header> como 100% da largura disponível. */
+	width: 100%;
+	/* fixei o elemento <header> no topo da página, mesmo quando a página é rolada. */
+	position: fixed;
+	/* defini a cor de fundo do elemento com a variável CSS --roxo-escuro. */
+	background-color: var(--roxo-escuro);
+	/* defini a cor do texto como a variável CSS --branco. */
+	color: var(--branco);
+	/* fiz com que o elemento <header> utilize o modelo de layout flexbox. */
+	display: flex;
+	/* defini a direção dos itens filhos do <header> como coluna. */
+	flex-direction: column;
+	/* defini um espaçamento interno de 0.25em (vertical) e 1.8em (horizontal) para o conteúdo dentro do <header>. */
+	padding: 0.25em 1.8em;
+	/*  especifiquei a ordem de sobreposição do <header> em relação aos outros elementos na página. */
+	z-index: 100;
+}
+
+/* defini o tamanho da fonte do <h1> como "x-large", um tamanho maior que o padrão.
+e o peso da fonte do <h1> como 500, o que normalmente representa um peso médio. */
+h1 {
+	font-size: x-large;
+	font-weight: 500;
+}
+
+/* o elemento de navegação 
+defini um espaçamento interno de 0.2em para o conteúdo
+utilizei o modelo de layout flexbox.
+centralizei verticalmente os itens filhos
+distribui os itens filhos dentro do <nav> com espaçamento igual entre eles.
+*/
+nav {
+	padding: 0.2em;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+/* No elemento a do nav
+defini a cor do texto dos elementos <a> como a variável CSS --branco.
+e removi a decoração de sublinhado dos links.
+*/
+nav a {
+	color: var(--branco);
+	text-decoration: none;
+}
+
+/* No seletor que representa os elementos <a> dentro do <nav> quando estão sendo hoverados (quando o cursor do mouse está sobre eles).
+defini a cor do texto dos elementos <a> hoverados como a variável CSS --roxo-claro.
+*/
+nav a:hover {
+	color: var(--roxo-claro);
+}
+
+/* os elementos <section>.
+defini um espaçamento interno de 5em (vertical) e 1.8em (horizontal) para o conteúdo dentro das <section>.
+defini a largura das <section> como 100% da largura disponível.
+fiz com que as <section> utilizem o modelo de layout flexbox.
+defini a direção dos itens filhos das <section> como coluna.
+*/
+section {
+	padding: 5em 1.8em;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+/* o seletor que representa as <section> que são elementos filhos ímpares (odd).
+defini a cor de fundo das <section> ímpares como a variável CSS --roxo-claro.
+defini a cor do texto dentro das <section> ímpares como a variável CSS --branco.
+*/
+section:nth-child(odd) {
+	background-color: var(--roxo-claro);
+	color: var(--branco);
+}
+
+/* o seletor que representa as <section> que são elementos filhos pares (even).
+defini a cor de fundo das <section> pares como a variável CSS --branco.
+defini a cor do texto dentro das <section> pares como a variável CSS --preto.
+*/
+section:nth-child(even) {
+	background-color: var(--branco);
+	color: var(--preto);
+}
+
+/* no seletor que representa os elementos <h2> dentro das <section>.
+defini o tamanho da fonte dos <h2> como 1.2rem.
+defini o peso da fonte dos <h2> como 500, o que normalmente representa um peso médio.
+converti o texto dos <h2> para letras maiúsculas.
+defini o espaçamento entre as letras dos <h2> como 3px.
+defini o alinhamento dos <h2> em relação aos outros elementos dentro das <section> como inicial (valor padrão).
+defini um espaçamento interno de 1.2em (vertical) e 0 (horizontal) para o conteúdo dentro dos <h2>.
+*/
+section h2 {
+	font-size: 1.2rem;
+	font-weight: 500;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+	align-self: initial;
+	padding: 1.2em 0;
+}
+
+/* no seletor que representa os elementos <img> dentro das <section>.
+defini a largura das imagens como 80% do contêiner pai para que não fique muito grande.
+defini um raio de borda de 30px para arredondar os cantos das imagens.
+adicionei um espaçamento interno de 20px ao redor das imagens.
+defini a largura máxima das imagens como 400px.
+defini o alinhamento das imagens em relação aos outros elementos dentro das <section> como centralizado na horizontal.
+*/
+section img {	
+	width: 80%;
+	border-radius: 30px;
+	padding: 20px;
+	max-width: 400px;
+	align-self: center;
+}
+
+
+/* no seletor que representa os elementos <p> dentro das <section>.
+defini o tamanho da fonte dos parágrafos como 1rem.
+defini a altura da linha como 1.8, o que cria um espaçamento vertical entre as linhas de texto.
+defini o espaçamento entre as letras dos parágrafos como 1.25px.
+alinhei o texto dos parágrafos de forma justificada, preenchendo o espaço disponível horizontalmente.
+*/
+ section p {
+	font-size: 1rem;
+	line-height: 1.8;
+	letter-spacing: 1.25px;
+	text-align: justify;
+}
+
+
+/* Na seção Contato */
+
+/* 
+defini a cor de fundo do elemento <section> com o ID "contato" como a variável CSS --roxo-escuro.
+defini o layout do elemento como um container flexível.
+centralizei verticalmente os elementos filhos dentro do container.
+centralizei horizontalmente os elementos filhos dentro do container.
+*/
+section#contato {
+	background-color: var(--roxo-escuro);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+
+/* 
+/-/-/-/-/-/-/-/-/-/-/- Efeito glassmorphism -/-/-/-/-/-/-/-/-/-/-/
+O glassmorphism como o nome já diz, é uma tentativa de simular uma película de vidro na aplicação,
+está sendo muito aplicada em cards, modais e etc… componentes mais quadrados ou retangulares.
+*/
+/* Criei span um elemento para fazer o efeito
+defini a largura do elemento span.shape como 430px.
+defini a altura do elemento span.shape como 520px.
+posicionei o elemento span.shape de forma absoluta em relação ao seu elemento pai.
+movi o elemento span.shape 50% para cima e 50% para a esquerda, para centralizá-lo verticalmente e horizontalmente.
+posicionei o elemento span.shape no centro horizontal da seção de contato.
+definie a opacidade do elemento span.shape como 1 (totalmente visível).
+adicionei uma transição suave de 0,5 segundos para a propriedade de opacidade do elemento span.shape.
+*/
+section#contato span.shape {
+	width: 430px;
+	height: 520px;
+	position: absolute;
+	transform: translate(-50%, -50%);
+	left: 50%;
+	right: 50%;	
+	opacity: 1;
+	transition: opacity .5s linear;
+}
+
+/* defini um conteúdo vazio para os pseudo-elementos ::before e ::after.
+Criando assim a impressão de haver dois elementos (duas esfereas)
+defini os pseudo-elementos como elementos de bloco.
+defini a largura e altura dos pseudo-elementos como 200px.
+posicionei os pseudo-elementos de forma absoluta em relação ao seu elemento pai.
+apliqiei um raio de borda de 50% aos pseudo-elementos, criando círculos.
+*/
+section#contato span::before,
+section#contato span::after {
+	content: "";
+	display: block;
+	width: 200px;
+	height: 200px;
+	position: absolute;
+	border-radius: 50%;
+}
+
+/* para o pseudo-elemento ::after
+defini um fundo gradiente linear, indo da cor --rosa para a cor --roxo-medio, em um ângulo de 135 graus.
+posicionei 80 pixels para a esquerda em relação à sua posição original e
+265 pixels para baixo em relação à sua posição original.
+*/
+section#contato span::after {
+	background: linear-gradient(135deg, var(--rosa),var(--roxo-medio));
+	left: -80px;
+	top: 265px;
+}
+
+/* para o pseudo-elemento ::before
+defini um fundo gradiente linear, indo da cor --roxo-escuro para a cor --azul, em um ângulo de 135 graus.
+posicionei 76 pixels para a direita em relação à sua posição original.
+posicionei o 260 pixels para cima em relação à sua posição original.
+*/
+section#contato span::before {
+	background: linear-gradient(135deg, var(--roxo-escuro), var(--azul));
+	right: -76px;
+	bottom: -260px;
+}
+
+/* com o elemento for para ajudar no efeito de glassmorphism dando transparência e a impressão de desfocadonos elementos span (esferas)
+defini a largura do elemento como 100% da largura disponível do elemento pai e defini a largura máxima do elemento form como 400px.
+define a altura como 500px.
+defini a cor de fundo com um tom de branco com transparência de 0,13.
+apliquei um desfoque de 10 pixels no elemento form e em seu conteúdo, permitindo que o conteúdo do plano de fundo seja desfocado.
+defini uma borda sólida de 2 pixels, com uma cor de branco com transparência de 0,1.
+adicionei uma sombra suave de 10 pixels ao redor do elemento, com uma cor de preto com transparência de 0,6.
+define um espaço interno de 30 pixels entre o conteúdo e suas bordas.
+escondi qualquer conteúdo que exceda as dimensões do elemento form, caso exista.
+defini um raio de borda de 20 pixels, arredondando seus cantos.
+*/
+section#contato form {
+	width: 100%;
+	max-width: 400px;
+	height: 500px;
+	background-color: rgba(255, 255, 255, 0.13);
+	backdrop-filter: blur(10px);
+	border: 2px solid rgba(255, 255, 255, 0.1);
+	box-shadow: 0 0 10px rgba(7, 8, 16, 0.6);
+	padding: 30px;
+	overflow: hidden;
+	border-radius: 20px;
+}
+
+
+/* Para todos os elementos filhos (*)
+removi as bordas de do elemento form.
+removi o contorno (outline) ao receber foco para todos os elementos filhos do elemento form.
+*/
+section#contato form * {
+	border: 0;
+	outline: 0;
+}
+
+/* para o h2 do form
+centralizei o texto horizontalmente.
+defini o tamanho da fonte como 32 pixels.
+defini o peso da fonte como 500 (médio).
+removi o espaçamento interno.
+*/
+section#contato form h2 {
+	text-align: center;
+	font-size: 32px;
+	font-weight: 500;
+	padding: 0;
+}
+
+/* para as labels
+defini as tags label como elementos em bloco.
+adicionei um espaçamento superior de 30 pixels aos elementos label, criando um espaço entre eles.
+*/
+section#contato form label {
+	display: block;
+	margin-top: 30px;
+}
+
+/* nas areas dos input e de texto
+defini os elementos input e textarea como elementos em bloco.
+defini a largura dos elementos input e textarea como 100% da largura disponível.
+defini a cor de fundo dos elementos input e textarea como um tom de branco com transparência de 0,15 (ajudando no efeito do glassmorphism).
+defini a cor do texto dos elementos input e textarea como o valor da variável --branco.
+defini um raio de borda de 3 pixels para os elementos input e textarea, arredondando seus cantos.
+adicionei um espaçamento interno de 0 pixels no topo e na parte inferior, e 10 pixels nas laterais dos elementos input e textarea.
+adicionadicionei um espaçamento superior de 8 pixels aos elementos input e textarea, criando um espaço entre eles.
+defini o peso da fonte dos elementos input e textarea como 400 (normal).
+*/
+section#contato form input,
+section#contato form textarea {
+	display: block;
+	width: 100%;
+	background-color: rgba(255, 255, 255, 0.15);
+	color: var(--branco);
+	border-radius: 3px;
+	padding: 0 10px;
+	margin-top: 8px;
+	font-weight: 400;
+}
+
+/* ainda nas areas dos input e de texto
+defini a altura do elemento input como 25 pixels.
+defini a altura do elemento textarea como 60 pixels.
+*/
+section#contato form input {
+	height: 25px;
+}
+section#contato form textarea {
+	height: 60px;
+}
+
+/* No botão do form
+defini a largura do elemento button como 100% da largura disponível.
+adicionei um espaçamento superior de 45 pixels ao elemento button, criando um espaço entre ele e os elementos anteriores.
+defini a cor de fundo do elemento button como o valor da variável --branco.
+defini a cor do texto do elemento button como o valor da variável --roxo-escuro.
+adicionei um espaçamento interno de 15 pixels no topo e na parte inferior do elemento button.
+defini o peso da fonte do elemento button como 500 (médio).
+adicionei um espaçamento de 2 pixels entre os caracteres do texto do elemento button.
+defini um raio de borda de 5 pixels para o elemento button, arredondando seus cantos.
+alterei o cursor do mouse para o ícone de ponteiro ao passar sobre o elemento button, indicando que é interativo.
+*/
+section#contato form button {
+	width: 100%;
+	margin-top: 45px;
+	background-color: var(--branco);
+	color: var(--roxo-escuro);
+	padding: 15px 0;
+	font-weight: 500;
+	letter-spacing: 2px;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+
+/* para o botão dentro do formulário do elemento section com o ID contato quando o cursor do mouse estiver sobre ele.
+defini o peso da fonte do botão como 600 (semi-negrito) quando o cursor do mouse estiver sobre ele.
+defini uma transição suave de 0,5 segundos para a mudança de propriedade do botão quando o cursor do mouse estiver sobre ele.
+*/
+section#contato form button:hover {
+	font-weight: 600;
+	transition: 0.5s;
+}
+
+/* Para o rodapé - tag <footer>
+centralizei o conteúdo horizontalmente.
+adicionei um espaçamento interno de 20 pixels ao redor do conteúdo do elemento footer.
+*/
+footer {
+	text-align: center;
+	padding: 20px;
+}

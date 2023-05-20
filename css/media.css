@@ -1,0 +1,126 @@
+/* As media queries oferecem uma maneira poderosa de tornar o site responsivo e adaptável
+a diferentes dispositivos e configurações de tela. Com base nas características do dispositivo,
+podendo aplicar estilos personalizados, reorganizar elementos, alterar o tamanho ou ocultar conteúdo,
+oferecendo uma experiência de usuário otimizada para cada caso. */
+
+/* nesse caso quando a configuração de tela for até no máximo 580px serão aplixadas as seguintes configurações:*/
+@media screen and (max-width: 580px) {  
+  /* o display do span que são as esferas serão ocultadas para não desconfigurar a página */
+  section#contato span {
+    display: none;
+  } 
+  /* o conteúdo que está na tag span tanto na seção resumo quanto na seção hobbies terão a configuração de coluna
+  para melhor visualização */
+  section#resumo span, section#hobbies span{
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+/* nesse caso quando a configuração de tela for no mínimo 581px serão aplixadas as seguintes configurações:*/
+@media screen and (min-width: 581px) {  
+  /* o header que está com a configuração em linha será configurado para coluna */
+  header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  } 
+
+}
+
+/* nesse caso quando a configuração de tela for no mínimo 768px serão aplicadas as seguintes configurações:*/
+@media screen and (min-width: 768px) {
+  /* a imagem que tem os jogos irá aumentar de tamanho para melhro configuração da página */
+  section#hobbies img.games {
+    max-width: 80%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  span {
+    display: flex;
+    align-items: center;
+  }
+}
+
+/* nesse caso quando a configuração de tela for no mínimo 1920px serão aplicadas as seguintes configurações:
+aumentei o tamanho das fontes e dos elementos para que fiquem mais bem distribuidos na tela assim como o efeito de glassmorphism */
+@media screen and (min-width:1920px) { 
+  header h1 {
+    font-size: 32px;
+  }
+
+  header nav {
+    font-size: 25px;
+  }
+
+  section h2 {
+    font-size: 2.2rem;
+  }
+
+  section img {
+    max-width: 600px;
+  }
+
+  section span p {
+    font-size: 2rem;
+    line-height: 2em;
+    letter-spacing: 1.5px;
+    text-align: justify;
+  }
+
+  section#contato span::after {
+    left: -190px;
+    top: 136px;
+  }
+
+  section#contato span::before {
+    right: -168px;
+    bottom: -402px;
+  }
+
+  section#contato form {
+    max-width: 600px;
+    height: 650px;
+  }
+
+  section#contato form h2 {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 500;
+    padding: 0;
+  }
+  
+  section#contato form label {
+    font-size: 25px;
+    display: block;
+    margin-top: 30px;
+  }
+  
+  section#contato form input,
+  section#contato form textarea {
+    font-weight: 400;
+    font-size: 25px;
+  }
+  section#contato form input {
+    height: 50px;
+  }
+  
+  section#contato form textarea {
+    height: 80px;
+  }
+
+  section#contato form button {
+    padding: 20px 0;
+    font-size: 25px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  footer {
+    font-size: 25px;
+  }
+  
+}

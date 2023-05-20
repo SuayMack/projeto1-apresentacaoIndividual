@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" type="text/css" href="./css/style.css">
+		<link rel="stylesheet" type="text/css" href="./css/media.css">
+		<title>Priscila Chueryz dos Santos</title>
+	</head>
+	<body>		
+		<!-- tag para cabeçalho -->
+		<header>
+			<h1>Priscila</h1>
+			<!-- tag para menu de navegação -->
+			<nav>			
+				<a href="#resumo">Resumo</a>
+				<a href="#hobbies">Hobbies</a>
+				<a href="#contato">Contato</a>			
+			</nav>
+		</header>
+		<!-- A tag <main> é usada para representar o conteúdo principal de uma página.
+		Ela deve conter o conteúdo central e exclusivo da página, excluindo elementos
+		como cabeçalhos, rodapés, barras de navegação e outras seções secundárias.
+		A tag <main> é importante porque ajuda a melhorar a acessibilidade e a estrutura semântica de uma página da web. 
+		Ela fornece uma maneira clara de identificar e separar o conteúdo principal do restante do documento. -->
+		<main>
+			<!-- Inicio Seção resumo -->
+			<section id="resumo">
+				<h2>Olá! Meu nome é Priscila Chueryz</h2>	
+				<!-- Coloquei a imagem e o parágrafo dentro da tag <span> para que o parágrafo contorne a imagem-->
+				<span>
+					<img class="about-img" src="./img/about.jpg" alt="foto priscila olhando para o mar" style="float: left;">					
+					<p>
+						Sou engenheira de software e me formei em fevereiro de 2022, tenho experiência em HTML, CSS e JS e atualmente cursando pós-graduações em Desenvolvimento de Sistemas com JAVA e PHP, Desenvolvimento de aplicações .NET e Business Intelligence. Adoro aprender e sou bastante flexível, procuro sempre lidar com desafios e imprevistos de maneira maleável e encontrar soluções inovadoras. Tenho facilidade em trabalhar em equipe, buscando sempre encontrar pontos positivos em vez de negativos. Acredito que uma boa convivência e colaboração mútua são fundamentais para construir um ambiente profissional agradável, desenvolver habilidades e alcançar metas com mais facilidade. Meu objetivo é aprender constantemente e fazer a diferença no ambiente profissional, sempre me comprometendo com metas e resultados como uma forma de satisfação pessoal. Além disso, tenho valores éticos e uma postura íntegra.
+					</p>
+				</span>
+			</section>
+			<!-- Fim Seção resumo -->
+			<!-- Inicio Seção Hobbies -->
+			<section id="hobbies">
+				<h2>Hobbies</h2>
+				<!-- Coloquei a imagem e o parágrafo dentro da tag <span> para que o parágrafo contorne a imagem-->
+				<span>
+					<img class= "family" src="./img/family.jpg" alt="foto da familia de priscila" style="float: right;">
+					<p>
+						Adoro passar tempo cuidando, passeando, brincando e jogando games com minha familia, assitir lutas é um dos meus passatempos favoritos. Também sou uma entusiasta de artes marciais e adoro treinar muaythai sempre que possível. Além disso, caminhar é uma forma que encontro para relaxar e entrar em contato com a natureza. Por último, mas não menos importante, adoro programar e passo muito tempo desenvolvendo minhas habilidades nessa área. Sempre acreditei que é importante equilibrar trabalho e lazer para ter uma vida plena e satisfatória. 
+					</p>			
+				</span>
+				<img class= "games" src="./img/games.png" alt="vários controles de consoles">	
+			</section>	
+			<!-- Fim Seção Hobbies -->		
+			<!-- Inicio Seção Contato -->
+			<section id="contato">			
+				<!-- Esse span utilizei para fazer as esferas do efeito de Glassmorphism  -->
+				<span class="shape"></span>
+				<!-- A tag <form> é usada para criar um formulário interativo em uma página da web. 
+				Um formulário é usado para coletar informações dos usuários, como entradas de texto,
+				seleções de opções, botões, etc. Essas informações podem ser enviadas para um servidor
+				web para processamento adicional, como registro de usuário, pesquisa, envio de mensagens, entre outros.  -->
+				<form action="" method="post">		
+					<h2>Contato</h2>
+					<label for="nome">Nome:</label>
+					<input type="text" id="nome" name="nome" required/>
+					<label for="email">Email:</label>
+					<input type="email" id="email" name="email" required/>
+					<label for="mensagem">Mensagem:</label>
+					<textarea id="mensagem" name="mensagem" required></textarea>
+					<button type="submit">Enviar</button>		
+				</form>	
+			</section>
+			<!-- Fim Seção Contato -->
+		</main>
+		<!-- Inicio Footer -->
+		<footer>
+			<p>
+				Feito com ❤️ PriscilaCS. All right reserved
+			</p>		
+		</footer>
+		<!-- Fim Footer -->
+	</body>
+</html>
